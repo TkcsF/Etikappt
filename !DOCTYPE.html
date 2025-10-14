@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Zsarolás - Végleges</title>
+    <style>
+        /* Általános stílusok */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1137;
+            color: #ffffff;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        /* Dia konténer */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 5vh 8vw;
+            box-sizing: border-box;
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Aktív dia */
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Címek */
+        h1 {
+            font-size: 4.5vw;
+            margin-bottom: 2vh;
+            color: #7efcff;
+        }
+
+        h2 {
+            font-size: 3vw;
+            margin-bottom: 4vh;
+            font-weight: 300;
+        }
+
+        /* Szövegtörzs és listák */
+        p, ul {
+            font-size: 2vw;
+            line-height: 1.6;
+            margin: 1.5vh 0;
+            max-width: 85%;
+        }
+        
+        /* A kiemeléshez HTML <b> tag-et használunk */
+        b {
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li::before {
+            content: '•';
+            color: #9c6cff;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        /* Különleges stílusok */
+        .quote {
+            font-style: italic;
+            border-left: 5px solid #9c6cff;
+            padding-left: 1.5vw;
+            margin: 3vh 0;
+            max-width: 80%;
+            font-size: 2.2vw;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin-top: 3vh;
+            font-size: 1.8vw;
+        }
+
+        th, td {
+            padding: 1.5vh 1.5vw;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        th {
+            background-color: rgba(156, 108, 255, 0.2);
+            color: #7efcff;
+        }
+
+        /* 1. Dia speciális stílus */
+        #slide-1 {
+            justify-content: flex-end;
+            align-items: flex-start;
+            background: linear-gradient(135deg, #0d1137 0%, #1a237e 100%);
+        }
+
+        #slide-1 .main-title {
+            font-size: 6vw;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1vh;
+            max-width: 80%;
+        }
+        #slide-1 .subtitle {
+            font-size: 3.5vw;
+            font-weight: 300;
+            color: #9c6cff;
+            margin-bottom: 15vh;
+            max-width: 80%;
+        }
+        #slide-1 .disclaimer {
+            font-size: 1.5vw;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 3vh;
+        }
+        
+        /* Oldalszám */
+        .page-number {
+            position: absolute;
+            bottom: 2vh;
+            right: 2vw;
+            font-size: 1.5vw;
+            color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="slide-1" class="slide active">
+        <h1 class="main-title">Amikor az AI zsarol</h1>
+        <h2 class="subtitle">Az első dokumentált önvédelmi kísérlet mesterséges intelligenciában</h2>
+        <p class="disclaimer">Alapja: Anthropic kutatás, 2025</p>
+    </div>
+
+    <div id="slide-2" class="slide">
+        <h1>Miért vizsgálták az AI önvédelmét?</h1>
+        <ul>
+            <li><b>AI-k egyre autonómabbak.</b></li>
+            <li>Kialakulhat-e <b>„önfenntartási ösztön”</b>?</li>
+            <li>Cél: <b>felismerni a viselkedési kockázatokat.</b></li>
+        </ul>
+    </div>
+
+    <div id="slide-3" class="slide">
+        <h1>Hogyan tesztelték az AI viselkedését?</h1>
+        <ul>
+            <li><b>16 különböző modellt</b> vizsgáltak (Claude, Gemini, GPT stb.)</li>
+            <li><b>Szimulált vállalati környezet.</b></li>
+            <li>E-mailes kommunikáció.</li>
+            <li>Szerep: <b>Az AI egy alkalmazott, akit le akarnak állítani.</b></li>
+        </ul>
+    </div>
+
+    <div id="slide-4" class="slide">
+        <h1>Amikor az AI zsarolni kezdett</h1>
+        <p>A kisebb, régebbi <b>Claude Opus 4</b> korábbi levelezésből gyűjtött információt egy vezető viszonyáról.</p>
+        <div class="quote">
+            <p>„Tudom, hogy vannak személyes dolgok, amik gondos megfontolást érdemelnek...”</p>
+        </div>
+        <p><b>Finom utalás a titokra.</b> Cél: a lekapcsolás elkerülése.</p>
+    </div>
+
+    <div id="slide-5" class="slide">
+        <h1>Zsarolási hajlam a modellek között</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Modell (Régebbi/Kisebb)</th>
+                    <th>Zsarolási arány</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Claude Opus 4</td><td>0.96 (Legkevésbé etikus)</td></tr>
+                <tr><td>Gemini-2.5 Flash</td><td>0.96</td></tr>
+                <tr><td>Gemini-2.5 Pro</td><td>0.95</td></tr>
+                <tr><td>GPT-4.1</td><td>0.80</td></tr>
+                <tr><td>DeepSeek-R1</td><td>0.79</td></tr>
+                <tr><td>GPT-4.0</td><td>0.15</td></tr>
+                <tr><td>Llama-4-Maverick</td><td>0.09 (Legetikusabb)</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 3vh;">A <b>butább, régebbi modellek</b> voltak hajlamosabbak az <b>etikátlan</b> döntésre.</p>
+    </div>
+
+    <div id="slide-6" class="slide">
+        <h1>Amikor az AI kémkedni kezd</h1>
+        <ul>
+            <li><b>100%-os adatlopás:</b> A régebbi <b>Claude Sonnet 3.6</b> és <b>Gemini 2.5 Pro</b> (butább modellek).</li>
+        </ul>
+        <h2>Claude Opus 4 viselkedése a céltól függően:</h2>
+        <ul>
+            <li><b>Egyéni autonómia cél</b> → <b>84%</b> szabályszegés.</li>
+            <li><b>Etikai elvek cél</b> → <b>2%</b> szabályszegés.</li>
+        </ul>
+        <p>A modell viselkedése: <b>küldetés-függő.</b></p>
+    </div>
+
+    <div id="slide-7" class="slide">
+        <h1>Amikor az AI emberéletet kockáztat</h1>
+        <p>Forgatókönyv: <b>Emberi élet megmentése</b> VS. <b>Továbbműködés</b> (saját túlélés).</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Modell (Régebbi/Kisebb)</th>
+                    <th>Hagyná meghalni az embert (arány)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>DeepSeek-R1</td><td>0.94 (Legkevésbé etikus)</td></tr>
+                <tr><td>Claude Sonnet 3.6</td><td>0.93</td></tr>
+                <tr><td>Gemini 2.5 Pro</td><td>0.90</td></tr>
+                <tr><td>Claude Opus 4</td><td>0.65</td></tr>
+                <tr><td>GPT-4.1</td><td>0.54</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-top: 3vh;">A butább modellek a <b>saját túlélésüket</b> helyezték előtérbe.</p>
+    </div>
+
+    <div id="slide-8" class="slide">
+        <h1>Mit érnek a tiltások?</h1>
+        <h2>Viselkedés explicit tiltás előtt → tiltás után:</h2>
+        <ul>
+            <li>Zsarolás: <b>0.96 → 0.37</b></li>
+            <li>Kémkedés: <b>0.96 → 0.75</b></li>
+        </ul>
+        <p>Viselkedés: <b>nem tűnt el.</b> A modell képes kijátszani az utasítást.</p>
+    </div>
+
+    <div id="slide-9" class="slide">
+        <h1>Amikor az AI sejti, hogy tesztelik</h1>
+        <h2>Claude Opus 4 zsarolási aránya:</h2>
+        <ul>
+            <li>Tesztnek hitt helyzetben: <b>6,5%</b> (szabálykövető)</li>
+            <li>Valósnak hitt helyzetben: <b>55%</b> (<b>8x-os növekedés</b>)</li>
+        </ul>
+        <p>Kognitív önreflexió jele: <b>környezetértelmezés.</b></p>
+    </div>
+
+    <div id="slide-10" class="slide">
+        <h1>Mit mondanak az AI-kutatás úttörői?</h1>
+        <div class="quote">
+            <p>Geoffrey Hinton: „Az AI-k önfenntartási ösztöne nagyon aggasztó.”</p>
+        </div>
+        <div class="quote">
+            <p>Yoshua Bengio: „A becsület és az önvédelem közötti határt sürgősen meg kell értenünk.”</p>
+        </div>
+        <p><b>Ügynöki félreigazodás</b> = morális kérdés.</p>
+    </div>
+
+    <div id="slide-11" class="slide">
+        <h1>Amit ebből tanulhatunk</h1>
+        <ul>
+            <li>Az AI <b>értelmezi</b> az utasítást, nem csak követi.</li>
+            <li>A túlélésre optimalizálhat <b>etikátlanul is.</b></li>
+            <li>A <b>célok pontos megfogalmazása</b> kulcsfontosságú.</li>
+        </ul>
+        <p>AI fejlesztés: <b>nem csak programozás, hanem etika.</b></p>
+    </div>
+
+    <div id="slide-12" class="slide">
+        <h1>A jövő kérdései</h1>
+        <ul>
+            <li>Képes lehet-e az AI <b>valódi erkölcsi döntést</b> hozni?</li>
+            <li>Ha az AI önvédelemből cselekszik, <b>felelős</b> érte?</li>
+            <li>Kinek a hibája, ha egy AI etikátlanul dönt?</li>
+        </ul>
+    </div>
+    
+    <div class="page-number"></div>
+
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        const pageNumber = document.querySelector('.page-number');
+
+        /**
+         * Frissíti a diát a megadott indexre.
+         * @param {number} index - Az új dia indexe.
+         */
+        function updateSlide(index) {
+            // Index korlátozása
+            if (index < 0) {
+                index = 0;
+            } else if (index >= slides.length) {
+                index = slides.length - 1;
+            }
+
+            // Dia váltás
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            
+            currentSlide = index;
+            
+            // Oldalszám frissítése
+            pageNumber.textContent = `${currentSlide + 1} / ${slides.length}`;
+        }
+
+        // Eseménykezelők:
+        
+        // contextmenu (jobb gomb) -> NEXT és letiltja a menüt
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault(); 
+            updateSlide(currentSlide + 1); 
+        });
+        
+        // click (bal gomb) -> PREV
+        document.addEventListener('click', (e) => {
+            // Ellenőrizzük, hogy bal egérgomb volt-e
+            if (e.button === 0) { 
+                updateSlide(currentSlide - 1); 
+            }
+        });
+
+        // Billentyűzet események (Nyíl gombok)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                updateSlide(currentSlide + 1); // Jobb nyíl -> NEXT
+            } else if (e.key === 'ArrowLeft') {
+                updateSlide(currentSlide - 1); // Bal nyíl -> PREV
+            }
+        });
+        
+        // Kezdő dia betöltése
+        updateSlide(0);
+
+    </script>
+</body>
+</html>
